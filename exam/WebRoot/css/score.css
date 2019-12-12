@@ -1,0 +1,59 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	
+}
+body:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.score{
+	
+	float: left;
+	margin-top: 10%;
+	margin-left: 40%;
+}
+.score span{
+	display: inline-block;
+	margin: 10px;
+}
+#text{
+	
+	color: #000000;
+	font-size: 35px;
+}
+#name{
+	
+	color: red;
+	font-size: 30px;
+}
+#score{
+	
+	font-size: 25px;
+}
+#fen{
+	
+	font-size:24px ;
+	color: red;
+}
+#new{
+	float: left;
+	border: none;
+	margin-top: 20px;	
+	padding: 7px 15px 7px 15px;
+	background: #2626FF;
+	border-radius: 4px 4px;
+	color: white;
+}
+#btn{
+	float: right;
+	border: none;
+	margin-top: 20px;
+	padding: 7px 15px 7px 15px;
+	background: #2626FF;
+	border-radius: 4px 4px;
+	color: white;
+}
