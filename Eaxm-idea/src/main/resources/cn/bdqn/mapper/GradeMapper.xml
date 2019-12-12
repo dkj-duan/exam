@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.bdqn.mapper.GradeMapper" >
+  <resultMap id="BaseResultMap" type="cn.bdqn.domain.Grade" >
+    <result column="stuId" property="stuid" jdbcType="INTEGER" />
+    <result column="paperName" property="papername" jdbcType="VARCHAR" />
+    <result column="stuGrade" property="stugrade" jdbcType="INTEGER" />
+    <result column="examTime" property="examtime" jdbcType="TIMESTAMP" />
+    <result column="accuracy" property="accuracy" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="cn.bdqn.domain.Grade" >
+    insert into t_grade (stuId, paperName, stuGrade, 
+      examTime, accuracy)
+    values (#{stuid,jdbcType=INTEGER}, #{papername,jdbcType=VARCHAR}, #{stugrade,jdbcType=INTEGER}, 
+      #{examtime,jdbcType=TIMESTAMP}, #{accuracy,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.bdqn.domain.Grade" >
+    insert into t_grade
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuid != null" >
+        stuId,
+      </if>
+      <if test="papername != null" >
+        paperName,
+      </if>
+      <if test="stugrade != null" >
+        stuGrade,
+      </if>
+      <if test="examtime != null" >
+        examTime,
+      </if>
+      <if test="accuracy != null" >
+        accuracy,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuid != null" >
+        #{stuid,jdbcType=INTEGER},
+      </if>
+      <if test="papername != null" >
+        #{papername,jdbcType=VARCHAR},
+      </if>
+      <if test="stugrade != null" >
+        #{stugrade,jdbcType=INTEGER},
+      </if>
+      <if test="examtime != null" >
+        #{examtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accuracy != null" >
+        #{accuracy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
