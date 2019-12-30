@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.bdqn.mapper.AdminMapper" >
+  <resultMap id="BaseResultMap" type="cn.bdqn.domain.Admin" >
+    <id column="adminId" property="adminid" jdbcType="INTEGER" />
+    <result column="adminName" property="adminname" jdbcType="VARCHAR" />
+    <result column="adminPwd" property="adminpwd" jdbcType="VARCHAR" />
+    <result column="adminEmail" property="adminemail" jdbcType="VARCHAR" />
+    <result column="adminCardId" property="admincardid" jdbcType="VARCHAR" />
+    <result column="adminPhone" property="adminphone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    adminId, adminName, adminPwd, adminEmail, adminCardId, adminPhone
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin
+    where adminId = #{adminid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_admin
+    where adminId = #{adminid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.bdqn.domain.Admin" >
+    insert into t_admin (adminId, adminName, adminPwd, 
+      adminEmail, adminCardId, adminPhone
+      )
+    values (#{adminid,jdbcType=INTEGER}, #{adminname,jdbcType=VARCHAR}, #{adminpwd,jdbcType=VARCHAR}, 
+      #{adminemail,jdbcType=VARCHAR}, #{admincardid,jdbcType=VARCHAR}, #{adminphone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.bdqn.domain.Admin" >
+    insert into t_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminid != null" >
+        adminId,
+      </if>
+      <if test="adminname != null" >
+        adminName,
+      </if>
+      <if test="adminpwd != null" >
+        adminPwd,
+      </if>
+      <if test="adminemail != null" >
+        adminEmail,
+      </if>
+      <if test="admincardid != null" >
+        adminCardId,
+      </if>
+      <if test="adminphone != null" >
+        adminPhone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminid != null" >
+        #{adminid,jdbcType=INTEGER},
+      </if>
+      <if test="adminname != null" >
+        #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="adminpwd != null" >
+        #{adminpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminemail != null" >
+        #{adminemail,jdbcType=VARCHAR},
+      </if>
+      <if test="admincardid != null" >
+        #{admincardid,jdbcType=VARCHAR},
+      </if>
+      <if test="adminphone != null" >
+        #{adminphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.bdqn.domain.Admin" >
+    update t_admin
+    <set >
+      <if test="adminname != null" >
+        adminName = #{adminname,jdbcType=VARCHAR},
+      </if>
+      <if test="adminpwd != null" >
+        adminPwd = #{adminpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminemail != null" >
+        adminEmail = #{adminemail,jdbcType=VARCHAR},
+      </if>
+      <if test="admincardid != null" >
+        adminCardId = #{admincardid,jdbcType=VARCHAR},
+      </if>
+      <if test="adminphone != null" >
+        adminPhone = #{adminphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where adminId = #{adminid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.bdqn.domain.Admin" >
+    update t_admin
+    set adminName = #{adminname,jdbcType=VARCHAR},
+      adminPwd = #{adminpwd,jdbcType=VARCHAR},
+      adminEmail = #{adminemail,jdbcType=VARCHAR},
+      adminCardId = #{admincardid,jdbcType=VARCHAR},
+      adminPhone = #{adminphone,jdbcType=VARCHAR}
+    where adminId = #{adminid,jdbcType=INTEGER}
+  </update>
+</mapper>

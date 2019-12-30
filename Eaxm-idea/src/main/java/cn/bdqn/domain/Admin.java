@@ -1,16 +1,20 @@
 package cn.bdqn.domain;
 
+/**
+ * 管理员类
+ */
 public class Admin {
+    //管理员ID
     private Integer adminid;
-
+    //管理员姓名
     private String adminname;
-
+    //管理员密码
     private String adminpwd;
-
+    //管理员邮箱
     private String adminemail;
-
+    //管理员身份证号
     private String admincardid;
-
+    //管理员手机号
     private String adminphone;
 
     public Integer getAdminid() {

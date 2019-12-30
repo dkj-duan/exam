@@ -1,8 +1,13 @@
 package cn.bdqn.domain;
 
+/**
+ * 试卷类
+ */
 public class Paper {
+    //试卷ID
     private Integer paperid;
 
+    //试卷名称
     private String papername;
 
     public Integer getPaperid() {

@@ -1,16 +1,25 @@
 package cn.bdqn.domain;
 
+/**
+ * 学生类
+ */
 public class Student {
+    //学生ID
     private Integer stuid;
 
+    //学生姓名
     private String stuname;
 
+    //学生密码
     private String stupwd;
 
+    //学生邮箱
     private String stuemail;
 
+    //学生身份证号
     private String stucardid;
 
+    //学生电话
     private String stuphone;
 
     public Integer getStuid() {

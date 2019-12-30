@@ -1,22 +1,34 @@
 package cn.bdqn.domain;
 
+/**
+ * 考试类
+ */
 public class Exam {
+    //考题编号
     private Integer issueid;
 
+    //考试内容
     private String issuetext;
 
+    //考试类型1、单选 2、多选
     private Integer issuetype;
 
+    //考题分数
     private Integer score;
 
+    //答案A
     private String answera;
 
+    //答案B
     private String answerb;
 
+    //答案C
     private String answerc;
 
+    //答案D
     private String answerd;
 
+    //标准答案选项
     private String answer;
 
     public Integer getIssueid() {
@@ -89,5 +101,20 @@ public class Exam {
 
     public void setAnswer(String answer) {
         this.answer = answer == null ? null : answer.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Exam{" +
+                "issueid=" + issueid +
+                ", issuetext='" + issuetext + '\'' +
+                ", issuetype=" + issuetype +
+                ", score=" + score +
+                ", answera='" + answera + '\'' +
+                ", answerb='" + answerb + '\'' +
+                ", answerc='" + answerc + '\'' +
+                ", answerd='" + answerd + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
     }
 }

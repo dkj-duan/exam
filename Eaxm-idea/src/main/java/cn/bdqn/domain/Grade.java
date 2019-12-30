@@ -2,15 +2,23 @@ package cn.bdqn.domain;
 
 import java.util.Date;
 
+/**
+ *学生成绩类
+ */
 public class Grade {
+    //学生编号
     private Integer stuid;
 
+    //随即试卷名称
     private String papername;
 
+    //学生成绩
     private Integer stugrade;
 
+    //考试时间
     private Date examtime;
 
+    //正确率
     private String accuracy;
 
     public Integer getStuid() {
